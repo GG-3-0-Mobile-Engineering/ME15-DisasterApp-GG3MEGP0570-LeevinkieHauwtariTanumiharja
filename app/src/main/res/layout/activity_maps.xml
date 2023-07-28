@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    style="@style/ModeBg"
+    tools:context=".ui.MapsActivity">
+
+    <FrameLayout
+        android:id="@+id/container_screen"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:id="@+id/collapsing_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_scrollFlags="scroll|snap|exitUntilCollapsed"
+                >
+
+                <fragment
+                    android:id="@+id/map"
+                    class="com.google.android.gms.maps.SupportMapFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tools:context=".ui.MapsActivity"
+                    tools:ignore="FragmentTagUsage" />
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/loadingAnimationView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:visibility="gone"
+                    app:lottie_autoPlay="false"
+                    app:lottie_loop="true"
+                    app:lottie_rawRes="@raw/loading"
+                    />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="60dp"
+                    android:paddingBottom="20dp"
+                    android:layout_gravity="center_horizontal">
+
+                    <androidx.appcompat.widget.SearchView
+                        android:id="@+id/searchView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        app:queryHint="Cari disini"
+                        app:iconifiedByDefault="false"
+                        app:queryBackground="@android:color/transparent"
+                        android:background="@drawable/customsearchview"
+                        android:theme="@style/SearchViewBg" />
+
+                    <ImageButton
+                        android:id="@+id/settings"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
+                        android:layout_margin="4dp"
+                        android:layout_alignRight="@+id/searchView"
+                        android:src="@drawable/icon_settings"/>
+
+                    <HorizontalScrollView
+                        android:layout_width="320dp"
+                        android:layout_height="45dp"
+                        android:layout_marginTop="65dp"
+                        android:scrollbars="none">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                                android:id="@+id/efab_flood"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
+                                style="@style/ExtendedFloatingActionButton"
+                                android:text="Banjir"
+                                android:textAllCaps="false"
+                                android:textSize="13sp"
+                                app:icon="@drawable/baseline_add_24"
+                                 />
+                            <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                                android:id="@+id/efab_earthquake"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
+                                style="@style/ExtendedFloatingActionButton"
+                                android:text="Gempa bumi"
+                                android:textAllCaps="false"
+                                android:textSize="13sp"
+                                app:icon="@drawable/baseline_add_24"
+                                />
+
+                            <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                                android:id="@+id/efab_wind"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
+                                style="@style/ExtendedFloatingActionButton"
+                                android:text="Angin kencang"
+                                android:textAllCaps="false"
+                                android:textSize="13sp"
+                                app:icon="@drawable/baseline_add_24"
+                                />
+
+                            <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                                android:id="@+id/efab_haze"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
+                                style="@style/ExtendedFloatingActionButton"
+                                android:text="Kabut asap"
+                                android:textAllCaps="false"
+                                android:textSize="13sp"
+                                app:icon="@drawable/baseline_add_24"
+                                />
+
+                            <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                                android:id="@+id/efab_fire"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
+                                style="@style/ExtendedFloatingActionButton"
+                                android:text="Kebakaran hutan"
+                                android:textAllCaps="false"
+                                android:textSize="13sp"
+                                app:icon="@drawable/baseline_add_24"
+                                />
+
+                            <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                                android:id="@+id/efab_volcano"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
+                                style="@style/ExtendedFloatingActionButton"
+                                android:text="Gunung api"
+                                android:textAllCaps="false"
+                                android:textSize="13sp"
+                                app:icon="@drawable/baseline_add_24"
+                                />
+
+                            <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                                android:id="@+id/efab_default"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
+                                style="@style/ExtendedFloatingActionButton"
+                                android:text="Default"
+                                android:textAllCaps="false"
+                                android:textSize="13sp"
+                                app:icon="@drawable/baseline_add_24"
+                                />
+
+                        </LinearLayout>
+
+                    </HorizontalScrollView>
+
+
+                </RelativeLayout>
+
+
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+        </com.google.android.material.appbar.AppBarLayout>
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:id="@+id/bottomSheet"
+        android:layout_height="wrap_content"
+        app:behavior_peekHeight="200dp"
+        android:background="@drawable/bg_bottomsheet"
+        style="@style/BottomSheetBg"
+        app:layout_behavior="@string/bottom_sheet_behavior">
+
+        <ImageView
+            android:id="@+id/arrow"
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/ArrowBg"
+            android:src="@drawable/baseline_keyboard_arrow_up_24"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Informasi Bencana Terkini"
+            android:padding="10dp"
+            style="@style/TextColor"
+            android:textStyle="bold"/>
+        
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/rv_itemDisaster"
+            tools:listitem="@layout/item_list_disaster"/>
+
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="nama_bencana">Nama bencana</string>
+    <string name="lokasi_bencana">Lokasi bencana</string>
+    <string name="tanggal_bencana">Tanggal bencana</string>
+</resources>
