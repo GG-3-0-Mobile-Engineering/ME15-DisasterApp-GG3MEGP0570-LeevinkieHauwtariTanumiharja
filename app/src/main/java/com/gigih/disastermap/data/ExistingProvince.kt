@@ -6,7 +6,7 @@ enum class ExistingProvince(val code: String, val provinceName: String) {
     KepBangkaBelitung("ID-BB", "Kep Bangka Belitung"),
     Banten("ID-BT", "Banten"),
     Bengkulu("ID-BE", "Bengkulu"),
-    JawaTengah("ID-JT", "Jawa Tengah"),
+    JawaTengah("ID-JT", "Jawa tengah"),
     KalimantanTengah("ID-KT", "Kalimantan Tengah"),
     SulawesiTengah("ID-ST", "Sulawesi Tengah"),
     JawaTimur("ID-JI", "Jawa Timur"),
@@ -35,5 +35,10 @@ enum class ExistingProvince(val code: String, val provinceName: String) {
     PapuaBarat("ID-PB", "Papua Barat"),
     SulawesiBarat("ID-SR", "Sulawesi Barat"),
     SumateraBarat("ID-SB", "Sumatera Barat"),
-    Unknown("", "Unknown")
+    Unknown("", "Unknown");
+    companion object {
+        fun getProvinceByCode(code: String): ExistingProvince {
+            return values().find { it.code == code } ?: Unknown
+        }
+    }
 }

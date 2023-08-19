@@ -6,4 +6,6 @@
     <string name="nama_bencana">Nama bencana</string>
     <string name="lokasi_bencana">Lokasi bencana</string>
     <string name="tanggal_bencana">Tanggal bencana</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

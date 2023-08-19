@@ -2,19 +2,13 @@ package com.gigih.disastermap.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.gigih.disastermap.R
 import com.gigih.disastermap.api.ApiResponse
 import com.gigih.disastermap.api.GeometriesItem
-import com.gigih.disastermap.api.Properties
-import com.gigih.disastermap.data.ExistingProvince
 import com.gigih.disastermap.databinding.ItemListDisasterBinding
 import com.gigih.disastermap.domain.DisasterDomain
-import java.text.SimpleDateFormat
-import java.util.Date
-import java.util.Locale
 
 class ListDisasterAdapter( val apiResponse: ApiResponse): RecyclerView.Adapter<ListDisasterAdapter.ViewHolder>() {
     class ViewHolder(val binding: ItemListDisasterBinding): RecyclerView.ViewHolder(binding.root)

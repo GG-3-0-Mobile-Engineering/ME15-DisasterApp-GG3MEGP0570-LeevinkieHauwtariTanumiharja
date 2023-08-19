@@ -1,25 +1,23 @@
-package com.gigih.disastermap.ui
+package com.gigih.disastermap.presentation
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.gigih.disastermap.adapter.ListDisasterAdapter
-import com.gigih.disastermap.api.ApiClient
 import com.gigih.disastermap.api.ApiResponse
 import com.gigih.disastermap.api.ApiService
 import com.gigih.disastermap.data.Period
+import dagger.hilt.android.lifecycle.HiltViewModel
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import javax.inject.Inject
 
-class MapsViewModel: ViewModel() {
+@HiltViewModel
+class MapsViewModel @Inject constructor(private val apiService: ApiService) : ViewModel() {
 
     private val _apiResponse = MutableLiveData<ApiResponse>()
     val apiResponse: LiveData<ApiResponse>
         get() = _apiResponse
-
-
-    private val apiService: ApiService = ApiClient.getService()
 
     init {
         // Fetch the data from the API
@@ -63,6 +61,4 @@ class MapsViewModel: ViewModel() {
             }
         })
     }
-
-
 }

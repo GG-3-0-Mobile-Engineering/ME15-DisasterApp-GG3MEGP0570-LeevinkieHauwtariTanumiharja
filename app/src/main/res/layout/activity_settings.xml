@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     style="@style/ModeBg"
-    tools:context=".ui.settings">
+    tools:context=".presentation.Settings">
 
     <androidx.appcompat.widget.SwitchCompat
         android:id="@+id/themeSwitch"

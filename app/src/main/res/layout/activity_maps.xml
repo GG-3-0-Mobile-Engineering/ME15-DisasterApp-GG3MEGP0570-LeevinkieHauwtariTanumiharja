@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     style="@style/ModeBg"
-    tools:context=".ui.MapsActivity">
+    tools:context=".presentation.Maps">
 
     <FrameLayout
         android:id="@+id/container_screen"
@@ -19,7 +19,6 @@
             android:layout_height="match_parent"
             >
 
-
             <com.google.android.material.appbar.CollapsingToolbarLayout
                 android:id="@+id/collapsing_toolbar"
                 android:layout_width="match_parent"
@@ -32,7 +31,7 @@
                     class="com.google.android.gms.maps.SupportMapFragment"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    tools:context=".ui.MapsActivity"
+                    tools:context=".presentation.Maps"
                     tools:ignore="FragmentTagUsage" />
 
                 <com.airbnb.lottie.LottieAnimationView
@@ -178,13 +177,12 @@
 
                     </HorizontalScrollView>
 
-
                 </RelativeLayout>
-
 
             </com.google.android.material.appbar.CollapsingToolbarLayout>
 
         </com.google.android.material.appbar.AppBarLayout>
+
     </FrameLayout>
 
     <LinearLayout
@@ -213,7 +211,7 @@
             android:padding="10dp"
             style="@style/TextColor"
             android:textStyle="bold"/>
-        
+
         <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

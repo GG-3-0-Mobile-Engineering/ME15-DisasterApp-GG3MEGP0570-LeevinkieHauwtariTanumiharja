@@ -1,17 +1,16 @@
-package com.gigih.disastermap.ui
-
+package com.gigih.disastermap.presentation
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.app.NavUtils
-import com.gigih.disastermap.data.SharedPreferencesManager
+import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatDelegate
 import com.gigih.disastermap.databinding.ActivitySettingsBinding
 
-class settings : AppCompatActivity() {
+class Settings : AppCompatActivity() {
 
     private lateinit var binding: ActivitySettingsBinding
-
+    private val viewModel: SettingsViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,17 +20,11 @@ class settings : AppCompatActivity() {
         // Change title app bar
         supportActionBar?.title = "Settings"
 
-        val savedThemeMode = SharedPreferencesManager.getThemeMode(this)
-        AppCompatDelegate.setDefaultNightMode(savedThemeMode)
-
-        // Set state Switch based on saved theme mode.
-        binding.themeSwitch.isChecked = savedThemeMode != AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM
+        val isNightModeEnabled = AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES
+        binding.themeSwitch.isChecked = isNightModeEnabled
 
         binding.themeSwitch.setOnCheckedChangeListener { _, isChecked ->
-            val themeMode = if (isChecked) AppCompatDelegate.MODE_NIGHT_YES else AppCompatDelegate.MODE_NIGHT_NO
-            AppCompatDelegate.setDefaultNightMode(themeMode)
-            // Save theme mode
-            SharedPreferencesManager.setThemeMode(this, themeMode)
+            viewModel.setThemeMode(isChecked)
         }
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)

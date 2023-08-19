@@ -9,9 +9,7 @@ data class ApiResponse(
 
     @field:SerializedName("statusCode")
     val statusCode: Int? = null
-
 )
-
 data class ReportData(
 
     @field:SerializedName("flood_depth")
